@@ -20,7 +20,35 @@ spring:
             - name: CircuitBreaker
               args:
                 name: userServiceCB
-                fallbackUri: forward:/fallback/patient
+                fallbackUri: forward:/fallback/user-service
+            - name: CircuitBreaker
+              args:
+                name: patientServiceCB
+                fallbackUri: forward:/fallback/patient-service
+            - name: CircuitBreaker
+              args:
+                name: doctorServiceCB
+                fallbackUri: forward:/fallback/doctor-service
+            - name: CircuitBreaker
+              args:
+                name: appointmentServiceCB
+                fallbackUri: forward:/fallback/appointment-service
+            - name: CircuitBreaker
+              args:
+                name: medicalRecordServiceCB
+                fallbackUri: forward:/fallback/medical-record-service
+            - name: CircuitBreaker
+              args:
+                name: consultationServiceCB
+                fallbackUri: forward:/fallback/consultation-service
+            - name: CircuitBreaker
+              args:
+                name: pharmacyServiceCB
+                fallbackUri: forward:/fallback/pharmacy-service
+            - name: CircuitBreaker
+              args:
+                name: insuranceClaimServiceCB
+                fallbackUri: forward:/fallback/insurance-service
 
         - id: patient-service
           uri: lb://patient-service
