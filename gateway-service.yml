@@ -19,7 +19,7 @@ spring:
           filters:
             - name: CircuitBreaker
               args:
-                name: patientServiceCB
+                name: userServiceCB
                 fallbackUri: forward:/fallback/patient
 
         - id: patient-service
